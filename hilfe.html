@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phe Rechner | Hilfe</title>
+<meta name="description" content="Phe Rechner | Hilfe">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Extra Start -->
+<link rel="apple-touch-icon" sizes="57x57" href="../favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="../favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="../favicons/manifest.json">
+<link rel="shortcut icon" href="../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#00b7ea">
+<meta name="msapplication-TileImage" content="../favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!--[if lt IE 9]>
+  <script src="../html5shiv/html5shiv.min.js"></script>
+<![endif]-->
+<!-- Hotjar Tracking Code for pkuapp.de -->
+<script>
+    (function(f,b){
+        var c;
+        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
+        f._hjSettings={hjid:39991, hjsv:4};
+        c=b.createElement("script");c.async=1;
+        c.src="//static.hotjar.com/c/hotjar-"+f._hjSettings.hjid+".js?sv="+f._hjSettings.hjsv;
+        b.getElementsByTagName("head")[0].appendChild(c);
+    })(window,document);
+</script>
+<!-- Extra Ende -->
+</head>
+<body id="redback">
+<div class="wrapper-red-light fadeInDown animated">
+	<div class="content">
+		<a class="link help" href="index.html">Zurück</a> <span class="bold">Hilfe</span>
+	</div>
+</div>
+<div class="wrapper-white bounceInUp animated2">
+	<div class="content">
+		<p>Vervollständige die Eingabefelder jeweils mit den entsprechenden Sätzen.</p>
+		<p>Zum Beispiel: "Das <span class="bold">Phenylalanin pro 100g</span> von <span class="bold">Roggenbrot</span> (optional) ist <span class="bold">264</span> mg und ich habe <span class="bold">60</span> g davon gegessen."</p>
+		<br>
+		<p>Je nach der Auswahl wird der genaue Phe-Wert berechnet für:</p>
+		<p><span class="bold">Phenylalanin pro 100g:</span><br>Gewicht * Phe / 100</p>
+		<br>
+		<p>Je nach der Auswahl wird der ungefähre Phe-Wert berechnet für:</p>
+		<p><span class="bold">Eiweiß von Obst pro 100g:</span><br>Gewicht * (Eiweiß * 30) / 100</p>
+		<p><span class="bold">Eiweiß von Gemüse pro 100g:</span><br>Gewicht * (Eiweiß * 40) / 100</p>
+		<p><span class="bold">Eiweiß von Sonstigem pro 100g:</span><br>Gewicht * (Eiweiß * 50) / 100</p>
+		<p>Ergebnisse werden auf zwei Nachkommastellen gerundet.</p>
+		<br>
+		<p>In der App Beschreibung unter <span class="bold">"Über"</span> sind noch weitere Funktionen kurz erläutert.</p>
+		<p>Den Rest einfach ausprobieren.</p>
+		<p>Man kann in dieser App nichts kaputt machen.</p>
+		<br>
+		<p>Wenn kein Komma auf deiner Tastatur angezeigt wird:</p>
+		<form name="nokomma">
+			<p><label><input type="checkbox" name="yeskomma" value="Komma-Option anzeigen" onclick="chEckbox()" id="checker"> Eingabefeld anzeigen (bei "Weitere Optionen")</label></p>
+		</form>
+		<br>
+		<p>Wenn du einen kompletten Reset machen möchtest:</p>
+		<form name="pheeinstellungen">
+			<p><input class="simplebutton" type="button" name="completereset" value="Alles zurücksetzen" onclick="coMpletereset()"></p>
+		</form>
+	</div>
+</div>
+<div class="wrapper-light">
+	<div class="content">
+		<div class="linkdiv">
+			<a class="link help" href="#">Hilfe</a>
+			<a class="link about" href="ueber.html">Über</a>
+		</div>
+	</div>
+</div>
+<script>
+function coMpletereset() {
+	var r=confirm("Wirklich alles zurücksetzen und einen kompletten Reset machen?");
+	if (r===true) {
+		localStorage.clear();
+		document.getElementById("checker").checked = false;
+	} else {}
+}
+
+function chEckbox() {
+	if (localStorage.getItem("checkbox") !== null) {
+		localStorage.removeItem("checkbox");
+		document.getElementById("checker").checked = false;
+	} else {
+		var checked = "1";
+		localStorage.setItem("checkbox", checked);
+		document.getElementById("checker").checked = true;
+	}
+}
+
+if (localStorage.getItem("checkbox") !== null) {
+	document.getElementById("checker").checked = true;
+} else {
+	document.getElementById("checker").checked = false;
+}
+</script>
+<!-- GetSiteControl -->
+<script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','//widgets.getsitecontrol.com/23460/script.js');
+</script>
+</body>
+</html>
