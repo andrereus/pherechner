@@ -389,14 +389,6 @@ input[type="button"], input[type="checkbox"], label {
   width: 100%;
 }
 
-th {
-  font-weight:normal;
-  text-align: left;
-  background: #d8eaf7;
-  border: 1px solid #00b7ea;
-  padding: 4px 6px;
-}
-
 .ntab td {
   border: 1px solid #00b7ea;
   padding: 4px 6px;
@@ -707,4 +699,25 @@ th {
           animation-name: bounceIn;
   -webkit-animation-duration: .75s;
           animation-duration: .75s;
+}
+
+/* Search */
+table {
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 0.1rem solid #e1e1e1;
+  padding: 10px 5px;
+  text-align: left;
+}
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+th:last-child,
+td:last-child {
+  padding-right: 0;
 }

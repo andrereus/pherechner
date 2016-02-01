@@ -6,29 +6,6 @@
 <title>Phe Rechner | Suche</title>
 <meta name="description" content="Phe Rechner | Suche">
 <link rel="stylesheet" type="text/css" href="style.css">
-<script>
-function showResult(str) {
-    if (str.length == 0) {
-        document.getElementById("textResult").innerHTML = "";
-        return;
-    } else {
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("textResult").innerHTML = xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET","http://pherechner.de/data.php?q="+str,true);
-        xmlhttp.send();
-    }
-}
-</script>
 <!-- Extra Start -->
 <link rel="apple-touch-icon" sizes="57x57" href="../favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="../favicons/apple-touch-icon-60x60.png">
@@ -66,9 +43,9 @@ function showResult(str) {
 <!-- Extra Ende -->
 </head>
 <body id="blueback">
-<div class="wrapper-blue-light fadeInDown animated">
+<div class="wrapper-blue-light">
   <div class="content-dark">
-    <a href="../"><img id="pkuimg" src="pku.png" width="25" height="25"></a>
+    <a href="index.html"><img id="pkuimg" src="pku.png" width="25" height="25"></a>
     <div class="barbuttons">
       <a class="link toplink recolor" href="index.html">Rechner</a>
       <a class="link toplink darklink" href="suche.html">Suche</a>
@@ -78,27 +55,24 @@ function showResult(str) {
     <div style="clear:both;"></div>
   </div>
 </div>
-<div class="wrapper-blue fadeInDown animated">
+<div class="wrapper-blue">
   <div class="content-dark">
-    <p class="lmspeicher bold">Suche <span class="small">(auf deutsch & englisch)</span></p>
+    <p class="lmspeicher bold">Suche <span class="small">(auf Englisch!)</span></p>
     <div style="clear:both;"></div>
   </div>
 </div>
-<div class="wrapper-blue-light lightSpeedIn animated">
+<div class="wrapper-blue-light">
   <div class="content">
-    <form name="nutritionSearch">
-      <p><input type="text" name="name" placeholder="Lebensmittel" onkeyup="showResult(this.value)" onkeydown="return event.keyCode != 13;"> Name</p>
+    <form action="get" id="site_search">
+      <input type="text" id="search_box">
+      <input type="submit" value="Search">
     </form>
   </div>
 </div>
 <div class="wrapper-white">
   <div class="content">
-    <form name="nutritionList">
-      <div id="textResult">Für die Suche ist eine Internetverbindung Vorraussetzung.<br><br>
-      Die <b>deutsche Datenbank</b> basiert auf naehrwertrechner.de.<br>
-      Dessen Daten stammen im Wesentlichen vom Bundeslebensmittelschlüssel.<br><br>
-      Die <b>englische Datenbank</b> basiert auf der USDA Datenbank Version 27.</p></div>
-    </form>
+    <table id="search_results"></table>
+    <p>Suche funktioniert jetzt auch offline und basiert auf der "USDA National Nutrient Database".</p>
   </div>
 </div>
 <div class="wrapper-dark">
@@ -109,6 +83,9 @@ function showResult(str) {
     </div>
   </div>
 </div>
+<script src="search/jquery-1.11.3.min.js"></script>
+<script src="search/lunr.min.js"></script>
+<script src="search/search.js"></script>
 <!-- GetSiteControl -->
 <script>
   (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
