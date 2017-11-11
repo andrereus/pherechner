@@ -1,8 +1,8 @@
-jQuery(function() {
+jQuery(function () {
     // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
-    window.idx = lunr(function() {
-        this.field('desc', {boost: 10});
+    window.idx = lunr(function () {
+        this.field('desc', { boost: 10 });
         this.field('phe');
     });
 
@@ -10,16 +10,16 @@ jQuery(function() {
     window.data = $.getJSON('search/usda.json');
 
     // Wait for the data to load and add it to lunr
-    window.data.then(function(loaded_data) {
-        $.each(loaded_data, function(index, value) {
+    window.data.then(function (loaded_data) {
+        $.each(loaded_data, function (index, value) {
             window.idx.add(
-                $.extend({"id": index}, value)
+                $.extend({ "id": index }, value)
             );
         });
     });
 
     // Event when the form is submitted
-    $("#site_search").submit(function(event) {
+    $("#site_search").submit(function (event) {
         event.preventDefault();
         var query = $("#search_box").val(); // Get the value for the text field
         var results = window.idx.search(query); // Get lunr to perform a search
@@ -30,7 +30,7 @@ jQuery(function() {
         var $search_results = $("#search_results");
 
         // Wait for data to load
-        window.data.then(function(loaded_data) {
+        window.data.then(function (loaded_data) {
 
             // Are there any results?
             if (results.length) {
@@ -45,13 +45,13 @@ jQuery(function() {
                 $search_results.append(appendHeader);
 
                 // Iterate over the results
-                results.forEach(function(result) {
+                results.forEach(function (result) {
                     var item = loaded_data[result.ref];
 
                     // Build a snippet of HTML for this result
                     var appendBody = '<tr><td>' +
                         item.desc + '</td><td class="nowrap">' +
-                        (item.phe*1000).toFixed(2).replace(/\.?0+$/, "") + ' mg</td></tr>';
+                        (item.phe * 1000).toFixed(2).replace(/\.?0+$/, "") + ' mg</td></tr>';
 
                     // Add it to the results
                     $search_results.append(appendBody);
