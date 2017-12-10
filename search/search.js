@@ -7,7 +7,7 @@ jQuery(function () {
     });
 
     // Download the data from the JSON file we generated
-    window.data = $.getJSON('search/usda.json');
+    window.data = $.getJSON('search/nwr.json');
 
     // Wait for the data to load and add it to lunr
     window.data.then(function (loaded_data) {
@@ -38,8 +38,8 @@ jQuery(function () {
 
                 // Build a snippet of HTML for this result
                 var appendHeader = '<thead><tr><th>' +
-                    'Description</th><th>' +
-                    'Phenyl&shy;alanine per 100&nbsp;g</th></tr></thead><tbody>';
+                    'Beschreibung</th><th>' +
+                    'Phenyl&shy;alanin pro 100&nbsp;g</th></tr></thead><tbody>';
 
                 // Add it to the results
                 $search_results.append(appendHeader);
@@ -51,7 +51,7 @@ jQuery(function () {
                     // Build a snippet of HTML for this result
                     var appendBody = '<tr><td>' +
                         item.desc + '</td><td class="nowrap">' +
-                        (item.phe * 1000).toFixed(2).replace(/\.?0+$/, "") + ' mg</td></tr>';
+                        (item.phe).replace(/\.?0+$/, "") + ' mg</td></tr>';
 
                     // Add it to the results
                     $search_results.append(appendBody);
