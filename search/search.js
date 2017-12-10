@@ -27,6 +27,7 @@ jQuery(function () {
     });
 
     function display_search_results(results) {
+        $(".search-info").remove(); // Remove search info
         var $search_results = $("#search_results");
 
         // Wait for data to load
