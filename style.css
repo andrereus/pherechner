@@ -764,6 +764,17 @@ td:last-child {
   line-height: 4;
 }
 
+.intro-video {
+  display: inline-block;
+  text-decoration: none;
+  color: #0096bf;
+}
+
+.intro-play {
+  display: inline-block;
+  margin: 0 2px -4px;
+}
+
 .intro-link {
   text-decoration: none;
 }
@@ -771,8 +782,6 @@ td:last-child {
 .intro-android {
   max-width: 150px;
   margin: 0 -9px -9px;
-  margin-left: -9px;
-  margin-bottom: -9px;
 }
 
 .intro-windows {
