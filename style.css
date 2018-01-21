@@ -729,3 +729,72 @@ td:last-child {
 .hidden {
     display: none;
 }
+
+/* Intro */
+.intro-container-1 {
+  float: left;
+  width: 50%;
+  min-width: 375px;
+}
+
+.intro-mockup {
+  float: right;
+  max-height: 100vh;
+  max-width: 100%;
+}
+
+.intro-container-2 {
+  float: left;
+  width: 50%;
+  min-width: 375px;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-description {
+  margin: 10px 0;
+}
+
+.intro-button {
+  line-height: 4;
+}
+
+.intro-link {
+  text-decoration: none;
+}
+
+.intro-android {
+  max-width: 150px;
+  margin: 0 -9px -9px;
+  margin-left: -9px;
+  margin-bottom: -9px;
+}
+
+.intro-windows {
+  max-width: 112px;
+}
+
+.intro-chrome {
+  max-width: 150px;
+}
+
+@media (max-width:750px) {
+  .intro-container-1 {
+    width: 100%;
+  }
+  
+  .intro-mockup {
+    float: left;
+    margin: -20px;
+    max-width: 75%;
+  }
+  
+  .intro-container-2 {
+    width: 100%;
+    height: auto;
+    margin: 20px;
+  }
+}

@@ -45,169 +45,27 @@
 </head>
 
 <body id="body">
-	<div class="wrapper-dark fadeInDown animated">
-		<div class="content-dark">
-			<a href="http://pherechner.de/">
-				<img id="pkuimg" src="pku.png" width="25" height="25">
-			</a>
-			<div class="barbuttons">
-				<a class="link toplink recolor" href="index.html">Rechner</a>
-				<a class="link toplink darklink" href="suche.html">Suche</a>
-				<a class="link toplink zwlmbcolor" href="zwischen.html">ZWS</a>
-				<a class="link toplink lmbcolor" href="lebensmittel.html">LMS</a>
-			</div>
-			<div style="clear:both;"></div>
-		</div>
-	</div>
-	<div class="wrapper-light bounceIn animated">
-		<div class="content">
-			<form name="pherechner">
-				<p>Das
-					<select id="select" onchange="mGg()">
-						<option value="phe">Phenylalanin pro 100g</option>
-						<option value="eiwo">Eiweiß von Obst pro 100g</option>
-						<option value="eiwg">Eiweiß von Gemüse pro 100g</option>
-						<option value="eiws">Eiweiß von Sonstigem pro 100g</option>
-					</select>
-				</p>
-				<p>von
-					<input type="text" name="name" placeholder="Lebensmittel" id="lmname" onfocus="this.value='';"> (optional)</p>
-				<p>ist
-					<input type="number" name="phe" placeholder="Wert" id="lmwert" onfocus="inPutw()" onkeyup="beRechnen()" onkeydown="return event.keyCode != 13;">
-					<span id="mgg">mg</span> und ich habe</p>
-				<p>
-					<input type="number" name="gewicht" placeholder="Gewicht" id="lmgewicht" onfocus="inPutg()" onkeyup="beRechnen()" onkeydown="return event.keyCode != 13;"> g davon gegessen.</p>
-				<br>
-				<p>
-					<span class="bold">=</span>&nbsp&nbsp
-					<span id="ergebnis" class="solution bold">0</span>
-					<span class="bold">Phe</span>
-					<input class="linkbutton savelink" type="button" name="hinzufügen" value="Hinzufügen" onclick="hiNzufugen()">
-				</p>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-white">
-		<div class="content">
-			<form name="pheplan">
-				<h3>
-					<label>
-						<input type="checkbox" name="yesplan" value="Tagesplan zeigen" onclick="chEckerbox()" id="checker1"> Tagesplan zeigen</label>
-				</h3>
-				<br>
-				<div id="tagesplanzeigen">
-					<p>
-						<span id="plan">0 Phe</span>
-					</p>
-					<br>
-				</div>
-				<div id="loading-border">
-					<div id="loading"></div>
-					<div id="preview"></div>
-				</div>
-				<p>
-					<span class="bold">Gesamt:</span>
-					<span id="gesamt">0</span> Phe</p>
-				<p>
-					<span class="bold">Übrig:</span>
-					<span id="ubrig">0</span> Phe</p>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-light">
-		<div class="content">
-			<form name="planzuliste">
-				<p>
-					<input class="linkbutton" type="button" name="tagplanfertig" value="Tag abschließen" onclick="tagPlanfertig()">
-				</p>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-white">
-		<div class="content">
-			<form name="pheliste">
-				<h3>
-					<label>
-						<input type="checkbox" name="yeslist" value="Tagesliste zeigen" onclick="chEckerboxx()" id="checker2"> Tagesliste zeigen</label>
-				</h3>
-				<br>
-				<div id="tageslistezeigen">
-					<p>
-						<span id="liste">0 Tage</span>
-					</p>
-					<br>
-				</div>
-				<p>
-					<span class="bold">Durchschnitt:</span>
-					<span id="durchschnitt">0</span> Phe</p>
-				<br>
-				<p id="mininfo">
-					<span class="bold" id="abweichung">0%</span> Abweichung vom Optimum</p>
-				<p id="mininfo">Insgesamt
-					<span class="bold" id="tage">0</span> Tage eingetragen</span>
-				</p>
-				<div id="motivation"></div>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-light">
-		<div class="content">
-			<form name="pheeinstellungen">
-				<h3>Weitere Optionen</h3>
-				<br>
-				<p>Wert korrigieren</p>
-				<p>
-					<input type="number" name="wert" placeholder="Wert korrigieren" id="wertkorr" onfocus="inPutwk()">
-				</p>
-				<p>
-					<input class="simplebutton" type="button" name="wertabziehen" value="Hinzufügen" onclick="plUs()">
-					<input class="simplebutton" type="button" name="wertabziehen" value="Abziehen" onclick="miNus()">
-				</p>
-				<br>
-				<div id="keinkomma">
-					<p>Kein Komma auf Tastatur?</p>
-					<p>
-						<select id="selectkomma">
-							<option value="wertkomma">Eingabefeld "Wert"</option>
-							<option value="gewichtkomma">Eingabefeld "Gewicht"</option>
-							<option value="korrekturkomma">Eingabefeld "Wert korrigieren"</option>
-							<option value="toleranzkomma">Eingabefeld "Phetoleranz"</option>
-						</select>
-					</p>
-					<p>
-						<input class="simplebutton" type="button" name="komma" value="Komma hinzufügen" onclick="koMma()">
-					</p>
-					<br>
-				</div>
-				<p>Phetoleranz pro Tag</p>
-				<p>
-					<input type="number" name="toleranz" placeholder="Phetoleranz" id="phetol" onfocus="inPutpt()">
-				</p>
-				<p>
-					<input class="simplebutton simpledarkbutton" type="button" name="toleranzspeichern" value="Speichern" onclick="spEichern()">
-					<input class="simplebutton" type="button" name="toleranzreset" value="Reset" onclick="loEschen()">
-				</p>
-				<p>Phetoleranz:
-					<span id="toleranz">0</span> Phe</p>
-				<br>
-				<p>
-					<input class="simplebutton" type="button" name="tagplanreset" value="Tagesplan zurücksetzen" onclick="tagPlanreset()">
-				</p>
-				<p>
-					<input class="simplebutton" type="button" name="taglistereset" value="Tagesliste zurücksetzen" onclick="tagListereset()">
-				</p>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-dark">
-		<div class="content-dark">
-			<div class="linkdiv">
-				<a class="link help" href="hilfe.html">Hilfe</a>
-				<a class="link about" href="ueber.html">Über</a>
-			</div>
-		</div>
-	</div>
-	<script src="script.js"></script>
+    <div class="intro-container-1">
+        <img src="pherechner-mockup.png" class="intro-mockup">
+    </div>
+    <div class="intro-container-2">
+        <div class="intro-content">
+            <h1>Phe Rechner</h1>
+            <p class="intro-description">Diese App richtet sich an Menschen mit PKU.<br>
+            Sie kombiniert Taschenrechner, Bleistift, Papier und Nährwerttabelle.<br>
+            Im Alltag wird somit meist nur noch eine Waage benötigt.</p>
+            <a href="app.html" class="linkbutton intro-button">Als Web App öffnen</a><br>
+            <a href="https://play.google.com/store/apps/details?id=com.endofweb.pherechner&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank" class="intro-link">
+                <img src="https://play.google.com/intl/en_us/badges/images/generic/de_badge_web_generic.png" alt="Jetzt bei Google Play" class="intro-android">
+            </a>
+            <a href="https://www.microsoft.com/store/apps/9nblggh0c4cc?ocid=badge" target="_blank" class="intro-link">
+                <img src="https://assets.windowsphone.com/82a90855-7d31-4ef0-a66b-449daf934b93/German_get-it-from-MS_InvariantCulture_Default.png" alt="Herunterladen von Microsoft" class="intro-windows">
+            </a>
+            <a href="https://chrome.google.com/webstore/detail/phe-rechner/phihennkfhbchhbegacdmondhhkpmfjj" target="_blank" class="intro-link">
+                <img src="chrome-web-store.png" alt="Verfügbar in Chrome Web Store" class="intro-chrome">
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
