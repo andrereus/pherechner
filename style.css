@@ -810,3 +810,14 @@ td:last-child {
     height: auto;
   }
 }
+
+.pku-tools {
+  text-align: center;
+  background: #3498db;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.pku-tools a {
+  color: #fff;
+}
