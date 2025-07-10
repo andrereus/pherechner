@@ -21,25 +21,28 @@ function hiNzufugen() {
       var lebensmittell = JSON.parse(localStorage.getItem("zwarray"));
       document.getElementById("lebensmittel").innerHTML = "";
       for (var i = 0; i < lebensmittell.length; i++) {
-        document.getElementById("lebensmittel").innerHTML += "<a href=\"index.html\" class=\"plan\"><span class=\"bold\">" +
-          lebensmittell[i].toString().replace(",", ":</span> ")
-          + " Gramm</a>";
+        document.getElementById("lebensmittel").innerHTML +=
+          '<a href="index.html" class="plan"><span class="bold">' +
+          lebensmittell[i].toString().replace(",", ":</span> ") +
+          " Gramm</a>";
       }
     } else {
       var larray = [name, ergebnis1.toFixed(2)];
       var lmarray = [larray];
       localStorage.setItem("zwarray", JSON.stringify(lmarray));
       var lebensmittel = JSON.parse(localStorage.getItem("zwarray"));
-      document.getElementById("lebensmittel").innerHTML = "<a href=\"index.html\" class=\"plan\"><span class=\"bold\">" +
-        lebensmittel[0].toString().replace(",", ":</span> ")
-        + " Gramm</a>";
+      document.getElementById("lebensmittel").innerHTML =
+        '<a href="index.html" class="plan"><span class="bold">' +
+        lebensmittel[0].toString().replace(",", ":</span> ") +
+        " Gramm</a>";
     }
-  } else { }
+  } else {
+  }
 }
 
 function derSpeicher(event) {
   var lmlink = event.target.innerText;
-  var lmarray = lmlink.split(' ');
+  var lmarray = lmlink.split(" ");
   lmarray.pop();
   localStorage.setItem("zwlebensmittel", JSON.stringify(lmarray));
 }
@@ -50,7 +53,8 @@ function tagListereset() {
     localStorage.removeItem("zwarray");
     localStorage.removeItem("zwlebensmittel");
     document.getElementById("lebensmittel").innerHTML = "0 Lebensmittel";
-  } else { }
+  } else {
+  }
 }
 
 function koMma() {
@@ -65,9 +69,10 @@ if (localStorage.getItem("zwarray") !== null) {
   var lebensmittelll = JSON.parse(localStorage.getItem("zwarray"));
   document.getElementById("lebensmittel").innerHTML = "";
   for (var i = 0; i < lebensmittelll.length; i++) {
-    document.getElementById("lebensmittel").innerHTML += "<a href=\"index.html\" class=\"plan\"><span class=\"bold\">" +
-      lebensmittelll[i].toString().replace(",", ":</span> ")
-      + " Gramm</a>";
+    document.getElementById("lebensmittel").innerHTML +=
+      '<a href="index.html" class="plan"><span class="bold">' +
+      lebensmittelll[i].toString().replace(",", ":</span> ") +
+      " Gramm</a>";
   }
 } else {
   document.getElementById("lebensmittel").innerHTML = "0 Lebensmittel";

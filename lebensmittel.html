@@ -1,137 +1,175 @@
 <!doctype html>
 <html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phe Rechner | Lebensmittelspeicher</title>
+    <meta name="description" content="Phe Rechner | Lebensmittelspeicher" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Extra Start -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="favicons/manifest.json" />
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#00b7ea" />
+    <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png" />
+    <meta name="msapplication-config" content="favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <!--[if lt IE 9]>
+      <script src="html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37072458-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Phe Rechner | Lebensmittelspeicher</title>
-	<meta name="description" content="Phe Rechner | Lebensmittelspeicher">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- Extra Start -->
-	<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="favicons/manifest.json">
-	<link rel="shortcut icon" href="favicons/favicon.ico">
-	<meta name="msapplication-TileColor" content="#00b7ea">
-	<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
-	<meta name="msapplication-config" content="favicons/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
-	<!--[if lt IE 9]>
-  <script src="html5shiv/html5shiv.min.js"></script>
-<![endif]-->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37072458-5"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+      gtag("config", "UA-37072458-5");
+    </script>
+    <!-- Hotjar Tracking Code for pherechner.de -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 143156, hjsv: 5 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "//static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+    <!-- Extra Ende -->
+    <script
+      async
+      defer
+      src="https://analytics.umami.is/script.js"
+      data-website-id="4dc8a3a6-b33e-43d7-adc8-082ebd3f694b"
+    ></script>
+  </head>
 
-		gtag('config', 'UA-37072458-5');
-	</script>
-	<!-- Hotjar Tracking Code for pherechner.de -->
-	<script>
-		(function (h, o, t, j, a, r) {
-			h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-			h._hjSettings = { hjid: 143156, hjsv: 5 };
-			a = o.getElementsByTagName('head')[0];
-			r = o.createElement('script'); r.async = 1;
-			r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-			a.appendChild(r);
-		})(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
-	</script>
-	<!-- Extra Ende -->
-	<script async defer src="https://analytics.umami.is/script.js" data-website-id="4dc8a3a6-b33e-43d7-adc8-082ebd3f694b"></script>
-</head>
-
-<body id="orangeback">
-	<div class="wrapper-orange-light fadeInDown animated">
-		<div class="content-dark">
-			<a href="index.html">
-				<img id="pkuimg" src="pku.png" width="25" height="25">
-			</a>
-			<div class="barbuttons">
-				<a class="link toplink recolor" href="app.html">Rechner</a>
-				<a class="link toplink darklink" href="suche.html">Suche</a>
-				<a class="link toplink zwlmbcolor" href="zwischen.html">ZWS</a>
-				<a class="link toplink lmbcolor" href="lebensmittel.html">LMS</a>
-			</div>
-			<div style="clear:both;"></div>
-		</div>
-	</div>
-	<div class="wrapper-orange fadeInDown animated">
-		<div class="content-dark">
-			<p class="lmspeicher bold">Lebensmittelspeicher</p>
-			<div style="clear:both;"></div>
-		</div>
-	</div>
-	<div class="wrapper-orange-light lightSpeedIn animated">
-		<div class="content">
-			<form name="pherechner">
-				<p>Das
-					<select id="select" onchange="mGg()">
-						<option value="phe">Phenylalanin pro 100g</option>
-						<option value="eiwo">Eiweiß von Obst pro 100g</option>
-						<option value="eiwg">Eiweiß von Gemüse pro 100g</option>
-						<option value="eiws">Eiweiß von Sonstigem pro 100g</option>
-					</select>
-				</p>
-				<p>von
-					<input type="text" name="name" placeholder="Lebensmittel" onfocus="this.value='';">
-				</p>
-				<p>ist
-					<input type="number" name="phe" placeholder="Wert" id="lmswert" onfocus="this.value='';">
-					<span id="mgg">mg</span>.</p>
-				<br>
-				<p>
-					<input class="linkbutton lmbcolor" type="button" name="speichern" value="Speichern" onclick="hiNzufugen()">
-				</p>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-white">
-		<div class="content">
-			<form name="pheplan">
-				<h3>Lebensmittel</h3>
-				<br>
-				<p id="lebensmittel" onclick="derSpeicher(event)"></p>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-light">
-		<div class="content">
-			<form name="pheeinstellungen">
-				<h3>Weitere Optionen</h3>
-				<br>
-				<p>Kein Komma auf Tastatur?</p>
-				<p>
-					<input class="simplebutton" type="button" name="komma" value="Komma bei Wert hinzufügen" onclick="koMma()">
-				</p>
-				<p>
-					<input class="simplebutton" type="button" name="taglistereset" value="Lebensmittelspeicher Reset" onclick="tagListereset()">
-				</p>
-			</form>
-		</div>
-	</div>
-	<div class="wrapper-dark">
-		<div class="content-dark">
-			<div class="linkdiv">
-				<a class="link help" href="hilfe.html">Hilfe</a>
-				<a class="link about" href="ueber.html">Über</a>
-			</div>
-		</div>
-	</div>
-	<script src="lebensmittel.js"></script>
-</body>
-
+  <body id="orangeback">
+    <div class="wrapper-orange-light fadeInDown animated">
+      <div class="content-dark">
+        <a href="index.html">
+          <img id="pkuimg" src="pku.png" width="25" height="25" />
+        </a>
+        <div class="barbuttons">
+          <a class="link toplink recolor" href="app.html">Rechner</a>
+          <a class="link toplink darklink" href="suche.html">Suche</a>
+          <a class="link toplink zwlmbcolor" href="zwischen.html">ZWS</a>
+          <a class="link toplink lmbcolor" href="lebensmittel.html">LMS</a>
+        </div>
+        <div style="clear: both"></div>
+      </div>
+    </div>
+    <div class="wrapper-orange fadeInDown animated">
+      <div class="content-dark">
+        <p class="lmspeicher bold">Lebensmittelspeicher</p>
+        <div style="clear: both"></div>
+      </div>
+    </div>
+    <div class="wrapper-orange-light lightSpeedIn animated">
+      <div class="content">
+        <form name="pherechner">
+          <p>
+            Das
+            <select id="select" onchange="mGg()">
+              <option value="phe">Phenylalanin pro 100g</option>
+              <option value="eiwo">Eiweiß von Obst pro 100g</option>
+              <option value="eiwg">Eiweiß von Gemüse pro 100g</option>
+              <option value="eiws">Eiweiß von Sonstigem pro 100g</option>
+            </select>
+          </p>
+          <p>
+            von
+            <input type="text" name="name" placeholder="Lebensmittel" onfocus="this.value='';" />
+          </p>
+          <p>
+            ist
+            <input
+              type="number"
+              name="phe"
+              placeholder="Wert"
+              id="lmswert"
+              onfocus="this.value='';"
+            />
+            <span id="mgg">mg</span>.
+          </p>
+          <br />
+          <p>
+            <input
+              class="linkbutton lmbcolor"
+              type="button"
+              name="speichern"
+              value="Speichern"
+              onclick="hiNzufugen()"
+            />
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="wrapper-white">
+      <div class="content">
+        <form name="pheplan">
+          <h3>Lebensmittel</h3>
+          <br />
+          <p id="lebensmittel" onclick="derSpeicher(event)"></p>
+        </form>
+      </div>
+    </div>
+    <div class="wrapper-light">
+      <div class="content">
+        <form name="pheeinstellungen">
+          <h3>Weitere Optionen</h3>
+          <br />
+          <p>Kein Komma auf Tastatur?</p>
+          <p>
+            <input
+              class="simplebutton"
+              type="button"
+              name="komma"
+              value="Komma bei Wert hinzufügen"
+              onclick="koMma()"
+            />
+          </p>
+          <p>
+            <input
+              class="simplebutton"
+              type="button"
+              name="taglistereset"
+              value="Lebensmittelspeicher Reset"
+              onclick="tagListereset()"
+            />
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="wrapper-dark">
+      <div class="content-dark">
+        <div class="linkdiv">
+          <a class="link help" href="hilfe.html">Hilfe</a>
+          <a class="link about" href="ueber.html">Über</a>
+        </div>
+      </div>
+    </div>
+    <script src="lebensmittel.js"></script>
+  </body>
 </html>
