@@ -777,6 +777,7 @@ td:last-child {
 
 .intro-link {
   text-decoration: none;
+  margin-right: 15px;
 }
 
 .intro-android {
